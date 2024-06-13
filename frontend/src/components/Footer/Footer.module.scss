@@ -1,0 +1,87 @@
+.footer {
+  background-color: #fff;
+  // background-color: #001517;
+  padding: 20px 0;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 30px;
+  text-align: center;
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerLogo {
+    margin-bottom: 20px;
+
+    img {
+      width: 150px;
+    }
+  }
+
+  .footerLinksContainer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+
+  .footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    p,
+    a {
+      color: #000;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1px;
+      text-decoration: none;
+
+      &:hover {
+        color: #4361ee;
+      }
+    }
+  }
+
+  .footerContainer {
+    display: flex;
+    justify-content: space-between; /* Опционально: пространство между блоками */
+  }
+
+  .box {
+    /* Дополнительные стили для ваших блоков */
+    width: 30%;
+    padding: 10px;
+    // background-color: lightgrey;
+    text-align: center;
+  }
+
+  .footerMedias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 2%;
+    width: 300px;
+    margin: 0 auto;
+
+    a {
+      color: #000;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #4361ee;
+      }
+    }
+  }
+
+  .footerCopyright {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 20px;
+  }
+}

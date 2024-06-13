@@ -1,0 +1,71 @@
+.actorImage {
+  width: 300px;
+  height: 430px;
+  margin-right: 20px;
+  object-fit: cover;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.relatedPosts {
+  margin-top: 40px;
+}
+
+.relatedPostsContainer {
+  display: flex;
+  justify-content: space-between; /* Распределение блоков с одинаковыми отступами */
+  gap: 10px; /* Расстояние между блоками */
+  // overflow-x: auto; /* Позволяет прокручивать содержимое при необходимости */
+}
+
+.relatedPost {
+  flex: 1 0 18%; /* Каждый блок занимает 18% ширины родителя, чтобы влезли 5 блоков */
+  max-width: 18%; /* Ограничение максимальной ширины для каждого блока */
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.relatedPostImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.relatedPostTitle {
+  font-size: 14px; /* Уменьшение размера шрифта для названия */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Media queries для адаптации под мобильные устройства */
+@media (max-width: 768px) {
+  .actorImage {
+    width: 100%; /* Сделаем изображение адаптивным */
+    max-width: none; /* Уберем максимальную ширину */
+    height: auto; /* Сохраним пропорции */
+    margin: 0 auto 20px auto; /* Центрируем изображение */
+  }
+
+  .relatedPostsContainer {
+    flex-wrap: wrap; /* Добавим перенос строк */
+  }
+
+  .relatedPost {
+    //flex: 1 0 100%; /* Каждый блок занимает всю ширину родителя */
+    // max-width: 100%; /* Ограничим максимальную ширину */
+    flex: 1 0 45%; /* Каждый блок занимает 45% ширины родителя, чтобы влезли 2 блока рядом */
+    max-width: 45%; /* Ограничим максимальную ширину */
+  }
+
+  .filmDetails {
+    display: flex;
+    flex-direction: column; /* Размещаем элементы вертикально на мобильных устройствах */
+  }
+
+  .container {
+    flex-direction: column; /* Размещаем элементы вертикально */
+  }
+}

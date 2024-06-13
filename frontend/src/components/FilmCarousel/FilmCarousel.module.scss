@@ -1,0 +1,56 @@
+// .carousel {
+//   width: 100%;
+//   margin-bottom: 20px;
+// }
+
+// .slide {
+//   padding: 10px;
+//   text-align: center;
+// }
+
+// .image {
+//   width: 100px;
+//   height: 150px;
+//   object-fit: cover;
+//   margin: 0 auto;
+// }
+
+// .title {
+//   font-size: 14px;
+//   margin-top: 10px;
+// }
+
+////////////////////////////////////////////
+
+.carousel {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.slide {
+  padding: 10px;
+  text-align: center;
+}
+
+.image {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.slick-prev {
+  left: 0 !important;
+  z-index: 1;
+}
+
+.slick-next {
+  right: 0 !important;
+  z-index: 1;
+}
