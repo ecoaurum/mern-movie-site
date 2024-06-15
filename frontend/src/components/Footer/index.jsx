@@ -6,6 +6,10 @@ import styles from './Footer.module.scss';
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   const links = (
     <>
       <p>
@@ -27,8 +31,8 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerInner}>
         <div className={styles.footerLogo}>
-          <Link to="/">
-            <img src="/images/logo/logo2.png" alt="Logo" />
+          <Link to="/" onClick={scrollToTop}>
+            <img src="/images/logo/logo9.png" alt="Logo" />
           </Link>
         </div>
         <div className={styles.footerContainer}>

@@ -41,10 +41,6 @@ export const Index = ({ postId }) => {
     <>
       <h3>Комментарии</h3>
       <div className={styles.root}>
-        {/* <Avatar
-          classes={{ root: styles.avatar }}
-          src="https://mui.com/static/images/avatar/5.jpg"
-        /> */}
         <div className={styles.form}>
           <form onSubmit={handleSubmit}>
             <input

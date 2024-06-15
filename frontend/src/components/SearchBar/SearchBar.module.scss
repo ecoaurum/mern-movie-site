@@ -1,0 +1,13 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+
+  .MuiTextField-root {
+    margin-right: 10px;
+    width: 300px; // Задайте желаемую ширину поля ввода
+  }
+
+  .MuiOutlinedInput-root {
+    height: 40px; // Задайте желаемую высоту поля ввода
+  }
+}

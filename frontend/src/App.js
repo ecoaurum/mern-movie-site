@@ -12,6 +12,8 @@ import { GenrePage } from './pages/GenrePage';
 import { AddActor } from './components/AddActor';
 import { EditActor } from './pages/EditActor';
 import { ActorsList } from './pages/ActorsList';
+import { SearchResults } from './components/SearchResults';
+import { NotFound } from './components/NotFound';
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +39,8 @@ function App() {
           <Route path="/add-actor" element={<AddActor />} />
           <Route path="/actors" element={<ActorsList />} />
           <Route path="/actors/:id/edit" element={<EditActor />} />
+          <Route path="/search" element={<SearchResults />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
       <Footer />
