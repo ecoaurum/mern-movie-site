@@ -1,6 +1,6 @@
 .root {
   background-color: #fff;
-  padding: 10px 0;
+  padding: 4px 0;
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 30px;
 }
@@ -15,18 +15,26 @@
 }
 
 .logo {
-  background-color: black;
-  color: #fff;
-  font-weight: 700;
-  line-height: 35px;
-  text-transform: uppercase;
-  letter-spacing: 0.15px;
-  border-radius: 5px;
-  padding: 0 10px;
-  text-decoration: none;
+  // background-color: black;
+  // color: #fff;
+  // font-weight: 700;
+  // line-height: 35px;
+  // text-transform: uppercase;
+  // letter-spacing: 0.15px;
+  // border-radius: 5px;
+  // padding: 0 10px;
+  // text-decoration: none;
+  // height: 40px; // Измените высоту по необходимости
+  // width: auto; // Сохраняем пропорции
+
+  // margin-bottom: 20px;
+
+  img {
+    width: 240px;
+  }
 
   &:hover {
-    background-color: #4361ee;
+    // background-color: #4361ee;
   }
 
   @media (max-width: 768px) {

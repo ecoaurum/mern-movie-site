@@ -93,8 +93,11 @@ app.delete('/actors/:id', ActorController.removeActor);
 // Похожие статьи
 app.get('/posts/:id/related', PostController.getRelatedPosts);
 
-// Популярные посты
+// Популярные статьи
 app.get('/posts/popular', PostController.getPopularPosts);
+
+// Поиск по сайту
+app.get('/search', PostController.searchPosts);
 
 // Сохранение рейтинга пользователя
 app.post('/posts/:id/rate', PostController.ratePost);

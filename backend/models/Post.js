@@ -6,11 +6,13 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
+      index: true, // Добавляем индекс к полю title
     },
     text: {
       type: String,
       required: true,
       unique: true,
+      index: true, // Добавляем индекс к полю text
     },
     tags: {
       type: Array,
@@ -82,11 +84,18 @@ const PostSchema = new mongoose.Schema(
       type: [String], // Массив для хранения ID пользователей или ключей для незарегистрированных пользователей
       default: [],
     },
-    imageUrl: String,
+    imageUrl: {
+      type: String, // Поле для URL изображения
+      default: '', // Установите значение по умолчанию, если необходимо
+    },
   },
   {
     timestamps: true,
   }
 );
+
+// Создание индексов для ускорения поиска
+PostSchema.index({ title: 'text' });
+PostSchema.index({ text: 'text' });
 
 export default mongoose.model('Post', PostSchema);

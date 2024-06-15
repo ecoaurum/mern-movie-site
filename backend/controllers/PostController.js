@@ -113,6 +113,37 @@ export const getPopularPosts = async (req, res) => {
   }
 };
 
+// Поиск статей по запросу через поиск на сайте
+export const searchPosts = async (req, res) => {
+  try {
+    // Получаем строку поиска из параметров запроса
+    const query = req.query.query;
+
+    // Выполняем поиск постов по заголовку или тексту, содержащим строку поиска (независимо от регистра)
+    // const posts = await PostModel.find({
+    //   $or: [
+    //     { title: new RegExp(query, 'i') },
+    //     { text: new RegExp(query, 'i') },
+    //   ],
+    // })
+    //   .populate('user')
+    //   .exec();
+
+    // Выполняем полнотекстовый поиск по полям title и text
+    const posts = await PostModel.find({ $text: { $search: query } })
+      .populate('user')
+      .exec();
+
+    // Возвращаем найденные посты в формате JSON
+    return res.json(posts);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({
+      message: 'Не удалось выполнить поиск',
+    });
+  }
+};
+
 //Сохранение рейтинга оценки фильма пользователем
 export const ratePost = async (req, res) => {
   try {
@@ -212,6 +243,12 @@ export const create = async (req, res) => {
       ? req.body.genres
       : req.body.genres.split(',');
 
+    // Добавляем базовый URL к imageUrl, если он не содержит базовый URL
+    // const imageUrl = req.body.imageUrl.startsWith('http')
+    //   ? req.body.imageUrl
+    //   : `http://localhost:4444${req.body.imageUrl}`;
+
+    //Создание поста
     const doc = new PostModel({
       title: req.body.title,
       text: req.body.text,

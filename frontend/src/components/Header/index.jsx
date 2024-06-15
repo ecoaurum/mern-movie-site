@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@mui/material/Button';
-
-import styles from './Header.module.scss';
 import Container from '@mui/material/Container';
+import { SearchBar } from '../SearchBar';
+import styles from './Header.module.scss';
 import { logout, selectIsAuth } from '../../redux/slices/auth';
 
 export const Header = () => {
@@ -23,8 +23,9 @@ export const Header = () => {
       <Container maxWidth="lg">
         <div className={styles.inner}>
           <Link className={styles.logo} to="/">
-            <div>LEGENDSTV</div>
+            <img src="/images/logo/logo9.png" alt="Logo" />
           </Link>
+          <SearchBar />
           <div className={styles.buttons}>
             {isAuth ? (
               <>

@@ -1,0 +1,28 @@
+.results {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultItem {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: #4361ee;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.image {
+  width: 170px;
+  height: 300px;
+  margin-right: 20px;
+  object-fit: cover;
+  float: left;
+  margin-bottom: 20px;
+}

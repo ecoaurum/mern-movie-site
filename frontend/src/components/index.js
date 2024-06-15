@@ -9,3 +9,6 @@ export * from './Footer';
 export * from './AddActor';
 export * from './PopularPostsBlock';
 export * from './FilmCarousel';
+export * from './SearchBar';
+export * from './SearchResults';
+export * from './NotFound';
