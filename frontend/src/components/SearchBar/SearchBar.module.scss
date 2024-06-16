@@ -1,13 +1,36 @@
 .searchBar {
-  display: flex;
+  // display: flex;
+  padding-top: 15px;
   align-items: center;
 
-  .MuiTextField-root {
+  .MuiFormControl-root.MuiTextField-root {
+    flex-grow: 1;
     margin-right: 10px;
-    width: 300px; // Задайте желаемую ширину поля ввода
+
+    .MuiInputBase-root {
+      height: 40px !important; // Здесь вы можете задать нужную высоту
+    }
+
+    .MuiOutlinedInput-input {
+      padding: 10px 14px !important; // Подберите отступы, чтобы текст был центрирован
+    }
+
+    label[data-shrink='false']
+      + .MuiInputBase-formControl
+      .MuiOutlinedInput-input {
+      padding: 4px 0 5px !important; // Применение стилей к лейблу, когда он не поднят
+      height: 30px !important; // Пример уменьшенной высоты
+    }
   }
 
-  .MuiOutlinedInput-root {
-    height: 40px; // Задайте желаемую высоту поля ввода
+  .linkButton {
+    background: none;
+    color: blue;
+    text-transform: none;
+
+    &:hover {
+      background: none;
+      text-decoration: underline;
+    }
   }
 }

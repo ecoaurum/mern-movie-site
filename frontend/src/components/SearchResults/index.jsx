@@ -32,18 +32,18 @@ export const SearchResults = () => {
             <Link to={`/posts/${result._id}`} className={styles.link}>
               {result.title}
             </Link>
-            <img
-              src={
-                result.imageUrl
-                  ? `http://localhost:4444${result.imageUrl}`
-                  : 'Фото отсутствует'
-              }
-              alt={result.title}
-              className={styles.image}
-            />
             {/* Используем функцию для удаления HTML-тегов */}
-            <p>{stripHtml(result.text)}</p>
+            {/* <p>{stripHtml(result.text)}</p> */}
           </h3>
+          <img
+            src={
+              result.imageUrl
+                ? `http://localhost:4444${result.imageUrl}`
+                : 'Фото отсутствует'
+            }
+            alt={result.title}
+            className={styles.image}
+          />
         </div>
       ))}
     </div>

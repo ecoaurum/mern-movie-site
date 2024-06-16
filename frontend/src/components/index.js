@@ -12,3 +12,5 @@ export * from './FilmCarousel';
 export * from './SearchBar';
 export * from './SearchResults';
 export * from './NotFound';
+export * from './OrderWishes';
+export * from './OrderWishForm';

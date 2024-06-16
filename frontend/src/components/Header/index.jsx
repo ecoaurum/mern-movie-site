@@ -30,18 +30,21 @@ export const Header = () => {
             {isAuth ? (
               <>
                 <Link to="/add-post">
-                  <Button variant="contained">Написать статью</Button>
+                  <Button className={styles.linkButton}>Написать статью</Button>
                 </Link>
                 <Link to="/add-actor">
-                  <Button variant="contained">Добавить актера</Button>
+                  <Button className={styles.linkButton}>Добавить актера</Button>
                 </Link>
                 <Link to="/actors">
-                  <Button variant="contained">Список актеров</Button>
+                  <Button className={styles.linkButton}>Список актеров</Button>
+                </Link>
+                <Link to="/orderwish">
+                  <Button className={styles.linkButton}>Стол заказов</Button>
                 </Link>
                 <Button
                   onClick={onClickLogout}
-                  variant="contained"
                   color="error"
+                  className={styles.linkButton}
                 >
                   Выйти
                 </Button>
@@ -49,10 +52,13 @@ export const Header = () => {
             ) : (
               <>
                 <Link to="/login">
-                  <Button variant="outlined">Войти</Button>
+                  <Button className={styles.linkButton}>Войти</Button>
                 </Link>
                 <Link to="/register">
-                  <Button variant="contained">Создать аккаунт</Button>
+                  <Button className={styles.linkButton}>Создать аккаунт</Button>
+                </Link>
+                <Link to="/orderwish">
+                  <Button className={styles.linkButton}>Стол заказов</Button>
                 </Link>
               </>
             )}

@@ -8,6 +8,7 @@ import {
   PostController,
   CommentController,
   ActorController,
+  OrderWishController,
 } from './controllers/index.js';
 import { checkAuth, handleValidationErrors } from './utils/index.js';
 
@@ -125,6 +126,10 @@ app.patch(
 //Комментарии
 app.post('/comments', CommentController.createComment);
 app.get('/comments/:postId', CommentController.getComment);
+
+// Стол заказов
+app.post('/orderwish', OrderWishController.createOrderWish);
+app.get('/orderwish', OrderWishController.getOrderWishes);
 
 //Start server
 const start = async () => {

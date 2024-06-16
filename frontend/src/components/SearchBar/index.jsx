@@ -4,8 +4,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { fetchSearchResults } from '../../redux/slices/search';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-// import styles from './SearchBar.module.scss';
-import './SearchBar.css';
+import styles from './SearchBar.module.scss';
+// import './SearchBar.css';
 
 // Компонент SearchBar, который будет содержать поле ввода для поиска и кнопку для отправки запроса.
 export const SearchBar = () => {
@@ -37,19 +37,31 @@ export const SearchBar = () => {
   }, [location.pathname]);
 
   return (
-    <div className="searchBar">
+    <div className={styles.searchBar}>
       <TextField
-        label="Поиск"
+        label="Поиск фильмов"
         variant="outlined"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={handleKeyDown}
+        // className={styles.textField}
+        sx={{
+          height: '40px',
+          '& .MuiInputBase-root': {
+            height: '30px',
+          },
+          '& .MuiOutlinedInput-input': {
+            padding: '10px 14px',
+          },
+          '& .MuiInputLabel-root': {
+            left: '12px',
+            top: '-12px',
+          },
+        }}
       />
-      <Button variant="contained" onClick={handleSearch}>
+      <Button onClick={handleSearch} className={styles.linkButton}>
         Найти
       </Button>
     </div>
   );
 };
-
-// export default SearchBar;

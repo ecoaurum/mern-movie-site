@@ -14,6 +14,7 @@ import { EditActor } from './pages/EditActor';
 import { ActorsList } from './pages/ActorsList';
 import { SearchResults } from './components/SearchResults';
 import { NotFound } from './components/NotFound';
+import { OrderWishes } from './components/OrderWishes';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ function App() {
           <Route path="/actors" element={<ActorsList />} />
           <Route path="/actors/:id/edit" element={<EditActor />} />
           <Route path="/search" element={<SearchResults />} />
+          <Route path="/orderwish" element={<OrderWishes />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
