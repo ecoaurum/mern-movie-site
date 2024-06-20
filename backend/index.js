@@ -2,6 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import multer from 'multer';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 import {
   UserController,
@@ -17,6 +19,9 @@ import {
   loginValidation,
   postCreateValidation,
 } from './validations/validations.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -122,6 +127,16 @@ app.patch(
   handleValidationErrors,
   PostController.update
 );
+
+// Обслуживание запросов к sitemap.xml
+app.get('/sitemap.xml', (req, res) => {
+  const sitemapPath = path.join(__dirname, 'sitemap.xml');
+  res.sendFile(sitemapPath, (err) => {
+    if (err) {
+      res.status(404).send('Sitemap not found');
+    }
+  });
+});
 
 //Комментарии
 app.post('/comments', CommentController.createComment);
